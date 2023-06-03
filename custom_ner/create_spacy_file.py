@@ -8,7 +8,7 @@ import langid
 ######
 
 # Open the file in read mode
-with open('./data/mix_development_data.jsonl', 'r') as f:
+with open('./data/mix_train_data_updated.jsonl', 'r') as f:
     # Load the JSON data from the file
     data = json.load(f)
 
@@ -31,4 +31,4 @@ for text, annotations in data:
         ents.append(span)
     doc.ents = ents
     db.add(doc)
-db.to_disk("./dev.spacy")
+db.to_disk("./train.spacy")
